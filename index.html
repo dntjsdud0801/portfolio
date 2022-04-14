@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --> <!-- 깃허브 하기전에 마지막에 주석처리 해줬음. -->
     <title>우선영 포트폴리오</title>
-    <!-- 외부에서 스타일을 설정해줄수 있도록 ↓-->
+    <!-- 팬시박스 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" /><!-- 팬시박스에서 복사한거 title 아래에 붙여넣기 한다.
+        절대,Enter눌러서 줄바꾸면 안됌.오류생김!!! alt+z 이용해서 줄바꿈! -->
+    
+    <!-- 외부에서 스타일을 설정해줄수 있도록 ↓, 외부css라고 부름-->
     <link href="css/main.css" rel="stylesheet" /> <!-- rel= stylesheet라고 연결해준다? 오타나면 연결이 안됀다고함! -->
+    
+    <!-- jquery 연결 --> <!-- 이 코드가 있어야 기능을 설정할수있다 ,-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- 팬시박스 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <script>
+        $(function(){
+            //탭메뉴 만들거임
+            $('.motion ul li').click(function(){
+                $('.motion ul li').removeClass('on'); /* li를 클릭하면 on을 없애겠다 */
+                $(this).addClass('on');
+
+                $('.motion .list_cont').removeClass('on'); /* 이미 앞에 class있기땜에 on에 .붙이지 않는다. 이걸 해줌으로써 선택한곳에 .on이 붙고 그전에 선택한건 .on이 사라지게함 */
+                $('.motion .list_cont').eq($(this).index()).addClass('on');
+            }); //$('선택자') .click => 클릭했을때, 선택자를 클릭했을때!라는 뜻, (function({})) 뭔가를 실행시켜줄거다!!이벤트가 생긴다!라는뜻
+        });//click end
+        // eq: ~의 순서를 찾아서 적용을 해준다 ,(this) => this는 .motion ul li중에서 클릭된 li임!!
+        //클릭한 li의 index:순서 를 찾아서 addclass명을 추가해주겠다?? <=== 정확하진 않음
+
+                      // 쌤이 말해준 뜻 ↓
+        //.eq($(this).index()) 이부분은 li를 클릭했을때 이 li가 가진 순서를 찾아서 적용한다!!라는 의미에요.
+        // ex) 내가 첫번째 li를 클릭하면 1의 순서가 들어가면서  .motion.list_cont중 1번한테 클래스명을 붙인다 <== 라고 해석할 수 있다.
+    </script>
 </head>
 <body>
     <header>
@@ -44,7 +73,7 @@
                 <strong>#브이로그(카테고리)</strong>
                 <h4>영상제목넣기</h4>
                 <p>편집, 촬영, 연출, 디자인, 특수효과/모작</p>
-                <p>제작목적, 컨셉트 2~3줄정도 Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae.</p>
+                <p>제작목적, 컨셉트 2~3줄정도 Lorem ipsum dolor sit amet consectetur adipisicing elit. <Recusandae class="height">45</Recusandae></p>
                 <dl>
                     <dt>프로그램</dt>
                     <dd>일러스트레이터, 프리미어 프로, 에프터이펙트</dd>
@@ -68,5 +97,230 @@
             </div><!-- .info end -->
         </div><!-- .cont end -->
     </section><!-- .best_v end -->
+    
+    <!-- 모션그래픽 복사한 부분 -->
+    <section class="motion">
+        <div class="title">
+             <h3>MOTION GRAPHICS</h3>
+             <p>비디오, 애니메이션 기술을 이용한 영상제작</p>
+        </div><!-- .title end -->
+        <ul class="list">
+            <li class="on">게임</li> <!-- 아래 on붙여준 이유처럼 같음! -->
+            <li>홍보영상</li>
+            <li>인포그래픽</li>
+            <li>브이로그</li>
+            <li>뮤비티저</li>
+        </ul><!-- .list end -->
+        <div class="motion_cont"> 
+            <div class="list_cont on"> <!-- 게임 --> <!-- on을 붙여주면 처음부터 첫번째 메뉴탭 cont는 보이게됌, 해준이유 : 아무것도 없으면 휑~하기때문. -->
+                 <div class="items">
+                      <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
+                           <div class="youtube_in"> 
+                                <!-- 유튜브연결  -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/UOxkGD8qRB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                           </div><!-- .youtube_in end -->
+                      </div><!-- .youtube end -->
+                      <div class="info">
+                           <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
+                           <h4>KDA-POP/STAR</h4>
+                           <dl>
+                               <dt>프로그램</dt>
+                               <dd>Premiere Pro, After Effects</dd>
+                           </dl>
+                           <dl>
+                               <dt>러닝타임</dt>
+                               <dd>00:03:23</dd>
+                           </dl>
+                           <dl>
+                               <dt>배경음악</dt>
+                               <dd>pop/star</dd>
+                           </dl>
+                           <dl>
+                               <dt>URL주소</dt>
+                               <dd>
+                                   <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4">영상보기</a>
+                               </dd>
+                           </dl>
+                      </div><!-- .info end -->
+                 </div><!-- .items end 1 -->
+
+                 <div class="items"> 
+                      <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
+                           <div class="youtube_in"> 
+                                <!-- 유튜브연결  -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/UOxkGD8qRB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                           </div><!-- .youtube_in end -->
+                      </div><!-- .youtube end -->
+                      <div class="info">
+                           <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
+                           <h4>KDA-POP/STAR</h4>
+                           <dl>
+                               <dt>프로그램</dt>
+                               <dd>Premiere Pro, After Effects</dd>
+                           </dl>
+                           <dl>
+                               <dt>러닝타임</dt>
+                               <dd>00:03:23</dd>
+                           </dl>
+                           <dl>
+                               <dt>배경음악</dt>
+                               <dd>pop/star</dd>
+                           </dl>
+                           <dl>
+                               <dt>URL주소</dt>
+                               <dd>
+                                   <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4">영상보기</a>
+                               </dd>
+                           </dl>
+                      </div><!-- .info end -->
+                 </div><!-- .items end 2 -->
+            </div><!-- .list_cont end 게임 -->
+
+            <div class="list_cont"> <!-- 홍보영상 -->
+                 <div class="items">
+                      <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
+                           <div class="youtube_in"> 
+                                <!-- 유튜브연결  -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/8AMBslo1zng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           </div><!-- .youtube_in end -->
+                      </div><!-- .youtube end -->
+                      <div class="info">
+                           <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
+                           <h4>KDA-POP/STAR</h4>
+                           <dl>
+                               <dt>프로그램</dt>
+                               <dd>Premiere Pro, After Effects</dd>
+                           </dl>
+                           <dl>
+                               <dt>러닝타임</dt>
+                               <dd>00:03:23</dd>
+                           </dl>
+                           <dl>
+                               <dt>배경음악</dt>
+                               <dd>pop/star</dd>
+                           </dl>
+                           <dl>
+                               <dt>URL주소</dt>
+                               <dd>
+                                   <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4">영상보기</a>
+                               </dd>
+                           </dl>
+                      </div><!-- .info end -->
+                 </div><!-- .items end 1 -->
+
+                 <div class="items"> 
+                      <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
+                           <div class="youtube_in"> 
+                                <!-- 유튜브연결  -->
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/c6EuFBH-vxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           </div><!-- .youtube_in end -->
+                      </div><!-- .youtube end -->
+                      <div class="info">
+                           <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
+                           <h4>KDA-POP/STAR</h4>
+                           <dl>
+                               <dt>프로그램</dt>
+                               <dd>Premiere Pro, After Effects</dd>
+                           </dl>
+                           <dl>
+                               <dt>러닝타임</dt>
+                               <dd>00:03:23</dd>
+                           </dl>
+                           <dl>
+                               <dt>배경음악</dt>
+                               <dd>pop/star</dd>
+                           </dl>
+                           <dl>
+                               <dt>URL주소</dt>
+                               <dd>
+                                   <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4">영상보기</a>
+                               </dd>
+                           </dl>
+                      </div><!-- .info end -->
+                 </div><!-- .items end 2 -->
+            </div><!-- .list_cont end 홍보영상 -->
+
+        </div><!-- .motion_cont end -->
+   </section> <!-- .motion end -->
+
+   <section class="g_ver05">
+        <div class="title">
+            <h3>GRAPHIC DESIGN</h3>
+            <p>디자인프로그램을 사용하여 만든 그래픽 디자인</p>
+            <em>클릭하시면 원본이미지를 모실 수 있습니다.</em>
+        </div><!-- .title end -->
+        <div class="cont">
+           <a class="items" href="https://via.placeholder.com/300x500" data-fancybox="images">
+                <figure>
+                    <img src="https://via.placeholder.com/300x500/333/?text=image" alt="" /> <!-- 이미지 태그는 단톡태그이기 떄문에 꼭 /> 닫아준다! -->
+                </figure>
+                <div class="info">
+                    <p>#보정 / 포토샵</p>
+                    <h4>제작된 이미지 제목</h4>
+                </div><!-- .info end -->
+           </a><!-- .items end 1 -->
+
+           <a class="items" href="https://via.placeholder.com/300x500" data-fancybox="images">
+                <figure>
+                    <img src="https://via.placeholder.com/300x500/333/?text=image" alt="" /> <!-- 이미지 태그는 단톡태그이기 떄문에 꼭 /> 닫아준다! -->
+                </figure>
+                <div class="info">
+                    <p>#보정 / 포토샵</p>
+                    <h4>제작된 이미지 제목</h4>
+                </div><!-- .info end -->
+           </a><!-- .items end 2 -->
+
+        </div><!-- .cont end -->
+   </section><!-- .g_ver05 end -->
+
+   <section class="about">
+        <div class="cont">
+            <figure>
+                <img src="https://via.placeholder.com/450x500/?text=image" alt="" />
+            </figure>
+            <div class="info">
+                <div>
+                    <h4>PROFILE</h4>
+                    <p>우선영 / Woo Seon Young</p>
+                    <p>1997.08.01</p>
+                    <p><a href="tel:010-4141-1372">010.4141.1372</a></p>
+                    <p>부산광역시 연제구</p>
+                </div>
+                <div>
+                    <h4>EDUCATION</h4>
+                    <dl>
+                        <dt>2021.12 ~ 2022.05</dt>
+                        <dd>그린컴퓨터아카데미<br />
+                        [멀티미디어콘텐츠제작]영상편집 수료</dd>
+                    </dl>
+                </div>
+                <div>
+                    <h4>LICENSE</h4>
+                    <dl>
+                        <dt>2000.00언제 땃는지</dt>
+                        <dd>자격증 이름</dd>
+                    </dl>
+                </div>
+                <div>
+                    <f4>SKILL</f4>
+                    <p>프리미어 프로, 에프터이펙트</p>
+                    <p>포토샵, 일러스트레이터</p>
+                    <p>HTML, CSS</p>
+                </div>
+            </div><!-- .info end -->
+        </div><!-- .cont end -->
+   </section><!-- .about end -->
+
+   <footer>
+       <h3>우선영 WOOSEONYOUNG</h3>
+       <ul>
+           <li><a href="#">유튜브채널</a></li>
+           <li><a href="tel:010-4141-1372">010.4141.1372</a></li>
+           <li>카카오아이디 : wyu2304</li>
+           <li>dntjsdud0801@naver.com</li>
+       </ul>
+       <p>copyright 2022. 우선영 all rights reserved.<br />
+        본 사이트는 개인 포트폴리오 사이트로 제작되오 상업적 목적이 아닙니다. 사용된 일부 이미지 및 폰트 등은 별도의 출처가 있음을 밝혀 드립니다.</p>
+   </footer>
 </body>
 </html>
