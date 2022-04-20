@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" /><!-- 팬시박스에서 복사한거 title 아래에 붙여넣기 한다.
         절대,Enter눌러서 줄바꾸면 안됌.오류생김!!! alt+z 이용해서 줄바꿈! -->
     
+        <!-- animate.css -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
+
+        <!-- aos css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- 외부에서 스타일을 설정해줄수 있도록 ↓, 외부css라고 부름-->
     <link href="css/main.css" rel="stylesheet" /> <!-- rel= stylesheet라고 연결해준다? 오타나면 연결이 안됀다고함! -->
     
@@ -17,7 +25,8 @@
     
     <!-- 팬시박스 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   
+    <!-- aos js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         $(function(){
             //탭메뉴 만들거임
@@ -27,8 +36,9 @@
 
                 $('.motion .list_cont').removeClass('on'); /* 이미 앞에 class있기땜에 on에 .붙이지 않는다. 이걸 해줌으로써 선택한곳에 .on이 붙고 그전에 선택한건 .on이 사라지게함 */
                 $('.motion .list_cont').eq($(this).index()).addClass('on');
-            }); //$('선택자') .click => 클릭했을때, 선택자를 클릭했을때!라는 뜻, (function({})) 뭔가를 실행시켜줄거다!!이벤트가 생긴다!라는뜻
-        });//click end
+            }); //$('선택자') .click => 클릭했을때, 선택자를 클릭했을때!라는 뜻, (function({})) 뭔가를 실행시켜줄거다!!이벤트가 생긴다!라는뜻,//click end 클릭이 끝나는 지점!
+            AOS.init(); /* aos script를 여기에다가 넣어줬음. */
+        });
         // eq: ~의 순서를 찾아서 적용을 해준다 ,(this) => this는 .motion ul li중에서 클릭된 li임!!
         //클릭한 li의 index:순서 를 찾아서 addclass명을 추가해주겠다?? <=== 정확하진 않음
 
@@ -41,19 +51,24 @@
     <header>
         <div>
             <h1>
-                <a href="#">로고</a>
+                <a href="#">SEONYOUNG</a>
             </h1>
-            <a href="#" download>resume</a> 
+            <a href="#" download>RESUME</a> 
         </div>
     </header>
     <section class="main_visual">
         <figure>
-            <img src="https://via.placeholder.com/1920x1000/333/333/?text=image" />  <!-- 지금까진 폴더안에 있는걸 가져왔지만, 이번엔 웹상에 있는거 가져옴, 경로/size/문구,배경색상/?text= <-문구 바꿈! -->
+           <!--<img src="https://via.placeholder.com/1920x1000/333/333/?text=image" /> -->   <!-- 지금까진 폴더안에 있는걸 가져왔지만, 이번엔 웹상에 있는거 가져옴, 경로/size/문구,배경색상/?text= <-문구 바꿈! -->
+            <video autoplay muted loop>
+                <source src="images/folwer.mp4" type="video/mp4"/>
+            </video>
         </figure>
-        <div class="title">
+        <div class="title "> <!--animate__animated와 애니메이션 명칭  -->
+            <div class="animate__animated animate__rubberBand">
             <h2>MOTION GRAPHIC DESIGNER</h2>
             <p>WOO SEON YOUNG</p>
-            <a href="#">유튜브채널</a>
+            <a href="https://www.youtube.com/channel/UCmvx21fKo7Z574SdvfzzZSg" target="_blank">유튜브채널</a>
+        </div>
         </div><!-- .title end -->
     </section><!-- .main_visual end -->
 
@@ -63,14 +78,14 @@
             <p>내가 뽑은 베스트 작품</p>
         </div><!-- .title end -->
         <div class="cont">
-            <div class="youtube">
+            <div class="youtube"  data-aos="zoom-in">
                 <div class="youtube_in">
                     <!--youtube_in 안에다가 유튜브 연결 -->
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/1Z6CHioIn3s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div><!-- .youtube_in end -->
             </div><!-- .youtube end -->
-            <div class="info">
-                <strong>#브이로그(카테고리)</strong>
+            <div class="info" data-aos="fade-right">
+                <strong>#브이로그</strong>
                 <h4>영상제목넣기</h4>
                 <p>편집, 촬영, 연출, 디자인, 특수효과/모작</p>
                 <p>제작목적, 컨셉트 2~3줄정도 Lorem ipsum dolor sit amet consectetur adipisicing elit. <Recusandae class="height">45</Recusandae></p>
@@ -105,40 +120,40 @@
              <p>비디오, 애니메이션 기술을 이용한 영상제작</p>
         </div><!-- .title end -->
         <ul class="list">
-            <li class="on">게임</li> <!-- 아래 on붙여준 이유처럼 같음! -->
+            <li class="on">브이로그</li> <!-- 아래 on붙여준 이유처럼 같음! -->
             <li>홍보영상</li>
-            <li>인포그래픽</li>
-            <li>브이로그</li>
-            <li>뮤비티저</li>
+            <!-- <li>인포그래픽</li> -->
+            <li>3D제작</li>
+            <!-- <li>뮤비티저</li> -->
         </ul><!-- .list end -->
         <div class="motion_cont"> 
-            <div class="list_cont on"> <!-- 게임 --> <!-- on을 붙여주면 처음부터 첫번째 메뉴탭 cont는 보이게됌, 해준이유 : 아무것도 없으면 휑~하기때문. -->
+            <div class="list_cont on"> <!-- 브이로그 --> <!-- on을 붙여주면 처음부터 첫번째 메뉴탭 cont는 보이게됌, 해준이유 : 아무것도 없으면 휑~하기때문. -->
                  <div class="items">
                       <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
                            <div class="youtube_in"> 
                                 <!-- 유튜브연결  -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/UOxkGD8qRB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/rAk90c-aefo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                            </div><!-- .youtube_in end -->
                       </div><!-- .youtube end -->
                       <div class="info">
                            <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
-                           <h4>KDA-POP/STAR</h4>
+                           <h4>우리동네</h4>
                            <dl>
                                <dt>프로그램</dt>
-                               <dd>Premiere Pro, After Effects</dd>
+                               <dd>Premiere Pro</dd>
                            </dl>
                            <dl>
                                <dt>러닝타임</dt>
-                               <dd>00:03:23</dd>
+                               <dd>00:01:20</dd>
                            </dl>
                            <dl>
                                <dt>배경음악</dt>
-                               <dd>pop/star</dd>
+                               <dd>BGM - To the moon</dd>
                            </dl>
                            <dl>
                                <dt>URL주소</dt>
                                <dd>
-                                   <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4">영상보기</a>
+                                   <a href="https://www.youtube.com/watch?v=rAk90c-aefo" target="_blank">영상보기</a>
                                </dd>
                            </dl>
                       </div><!-- .info end -->
@@ -148,19 +163,19 @@
                       <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
                            <div class="youtube_in"> 
                                 <!-- 유튜브연결  -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/UOxkGD8qRB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Xt69-7Ue8IQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                            </div><!-- .youtube_in end -->
                       </div><!-- .youtube end -->
                       <div class="info">
                            <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
-                           <h4>KDA-POP/STAR</h4>
+                           <h4>해동용궁사</h4>
                            <dl>
                                <dt>프로그램</dt>
-                               <dd>Premiere Pro, After Effects</dd>
+                               <dd>Premiere Pro</dd>
                            </dl>
                            <dl>
                                <dt>러닝타임</dt>
-                               <dd>00:03:23</dd>
+                               <dd>00:02:01</dd>
                            </dl>
                            <dl>
                                <dt>배경음악</dt>
@@ -169,7 +184,7 @@
                            <dl>
                                <dt>URL주소</dt>
                                <dd>
-                                   <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4">영상보기</a>
+                                   <a href="https://www.youtube.com/watch?v=Xt69-7Ue8IQ" target="_blank">영상보기</a>
                                </dd>
                            </dl>
                       </div><!-- .info end -->
@@ -181,28 +196,28 @@
                       <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
                            <div class="youtube_in"> 
                                 <!-- 유튜브연결  -->
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/8AMBslo1zng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/9dWVq-ThWb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                            </div><!-- .youtube_in end -->
                       </div><!-- .youtube end -->
                       <div class="info">
                            <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
-                           <h4>KDA-POP/STAR</h4>
+                           <h4>헤드셋 홍보</h4>
                            <dl>
                                <dt>프로그램</dt>
                                <dd>Premiere Pro, After Effects</dd>
                            </dl>
                            <dl>
                                <dt>러닝타임</dt>
-                               <dd>00:03:23</dd>
+                               <dd>00:00:58</dd>
                            </dl>
                            <dl>
                                <dt>배경음악</dt>
-                               <dd>pop/star</dd>
+                               <dd> League of Legends - Awaken</dd>
                            </dl>
                            <dl>
                                <dt>URL주소</dt>
                                <dd>
-                                   <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4">영상보기</a>
+                                   <a href="https://www.youtube.com/watch?v=9dWVq-ThWb8" target="_blank">영상보기</a>
                                </dd>
                            </dl>
                       </div><!-- .info end -->
@@ -240,6 +255,70 @@
                  </div><!-- .items end 2 -->
             </div><!-- .list_cont end 홍보영상 -->
 
+            <div class="list_cont"> <!-- 3d -->
+                <div class="items">
+                     <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
+                          <div class="youtube_in"> 
+                               <!-- 유튜브연결  -->
+                               <iframe width="560" height="315" src="https://www.youtube.com/embed/b_3yMQQIZJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div><!-- .youtube_in end -->
+                     </div><!-- .youtube end -->
+                     <div class="info">
+                          <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
+                          <h4>3D연령고지</h4>
+                          <dl>
+                              <dt>프로그램</dt>
+                              <dd>Maya, Premiere pro</dd>
+                          </dl>
+                          <dl>
+                              <dt>러닝타임</dt>
+                              <dd>00:00:22</dd>
+                          </dl>
+                          <dl>
+                              <dt>배경음악</dt>
+                              <dd> Tido Kang - 병아리 왈츠</dd>
+                          </dl>
+                          <dl>
+                              <dt>URL주소</dt>
+                              <dd>
+                                  <a href="https://www.youtube.com/watch?v=b_3yMQQIZJY" target="_blank">영상보기</a>
+                              </dd>
+                          </dl>
+                     </div><!-- .info end -->
+                </div><!-- .items end 1 -->
+
+                <div class="items"> 
+                     <div class="youtube"> <!-- 크기조절 하기위해 만든것 -->
+                          <div class="youtube_in"> 
+                               <!-- 유튜브연결  -->
+                               <iframe width="560" height="315" src="https://www.youtube.com/embed/c6EuFBH-vxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div><!-- .youtube_in end -->
+                     </div><!-- .youtube end -->
+                     <div class="info">
+                          <p>각본, 연출, 촬영, 편집, 보정, 특수효과</p> 
+                          <h4>KDA-POP/STAR</h4>
+                          <dl>
+                              <dt>프로그램</dt>
+                              <dd>Premiere Pro, After Effects</dd>
+                          </dl>
+                          <dl>
+                              <dt>러닝타임</dt>
+                              <dd>00:03:23</dd>
+                          </dl>
+                          <dl>
+                              <dt>배경음악</dt>
+                              <dd>pop/star</dd>
+                          </dl>
+                          <dl>
+                              <dt>URL주소</dt>
+                              <dd>
+                                  <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4">영상보기</a>
+                              </dd>
+                          </dl>
+                     </div><!-- .info end -->
+                </div><!-- .items end 3 -->
+           </div><!-- .list_cont end 브이로그 -->
+
         </div><!-- .motion_cont end -->
    </section> <!-- .motion end -->
 
@@ -250,22 +329,22 @@
             <em>클릭하시면 원본이미지를 모실 수 있습니다.</em>
         </div><!-- .title end -->
         <div class="cont">
-           <a class="items" href="https://via.placeholder.com/300x500" data-fancybox="images">
+           <a class="items" href="" data-fancybox="images"> <!-- 이게 클릭했을때 이미지 크게 하는 태그,,,아래 링크랑 똑같이 쓰면됌! -->
                 <figure>
-                    <img src="https://via.placeholder.com/300x500/333/?text=image" alt="" /> <!-- 이미지 태그는 단톡태그이기 떄문에 꼭 /> 닫아준다! -->
+                    <img src="" alt="소녀" /> <!-- 이미지 태그는 단톡태그이기 떄문에 꼭 /> 닫아준다! -->
                 </figure>
                 <div class="info">
-                    <p>#보정 / 포토샵</p>
+                    <p>#포토샵</p>
                     <h4>제작된 이미지 제목</h4>
                 </div><!-- .info end -->
            </a><!-- .items end 1 -->
 
-           <a class="items" href="https://via.placeholder.com/300x500" data-fancybox="images">
+           <a class="items" href="images/벚꽃.png" data-fancybox="images">
                 <figure>
-                    <img src="https://via.placeholder.com/300x500/333/?text=image" alt="" /> <!-- 이미지 태그는 단톡태그이기 떄문에 꼭 /> 닫아준다! -->
+                    <img src="images/벚꽃.png" alt="벚꽃" /> <!-- 이미지 태그는 단톡태그이기 떄문에 꼭 /> 닫아준다! -->
                 </figure>
                 <div class="info">
-                    <p>#보정 / 포토샵</p>
+                    <p>#포토샵</p>
                     <h4>제작된 이미지 제목</h4>
                 </div><!-- .info end -->
            </a><!-- .items end 2 -->
@@ -302,7 +381,7 @@
                     </dl>
                 </div>
                 <div>
-                    <f4>SKILL</f4>
+                    <h4>SKILL</h4>
                     <p>프리미어 프로, 에프터이펙트</p>
                     <p>포토샵, 일러스트레이터</p>
                     <p>HTML, CSS</p>
@@ -314,7 +393,7 @@
    <footer>
        <h3>우선영 WOOSEONYOUNG</h3>
        <ul>
-           <li><a href="#">유튜브채널</a></li>
+           <li><a href="https://www.youtube.com/channel/UCmvx21fKo7Z574SdvfzzZSg" target="_blank">유튜브채널</a></li>
            <li><a href="tel:010-4141-1372">010.4141.1372</a></li>
            <li>카카오아이디 : wyu2304</li>
            <li>dntjsdud0801@naver.com</li>
