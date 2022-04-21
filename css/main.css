@@ -99,6 +99,7 @@ header div a {
     background-color: rgb(255, 44, 44);
     text-align: center;
     display: block; /* animation효과 주니까 박스가 작아져서 block 줬음 */
+    font-family: 'SuncheonB';
 }
 
 /* .best_v 시작 */
@@ -540,12 +541,20 @@ footer h3 {
 }/* 해상도 960px 이하 */
 
 @media screen and (max-width:640px) {
+    .main_visual .title {margin-left: 15px;}
     .main_visual .title h2 {
-        font-size: 25px;
+        font-size: 20px;
     }
     .main_visual .title p {
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 15px;
+        margin-bottom: 11px;
+        }
+        .main_visual .title a {
+            width: 95px;
+            height: 32px;
+            line-height: 32px;
+            font-size: 14px;
+            margin-left: 15px;
         }
     section .title h3 {
         font-size: 30px !important; /* !important:앞전의 우선순위 무시하고 지금꺼 적용한다? */
