@@ -5,7 +5,7 @@ li {list-style: none;}
 a {text-decoration: none; color: #333;}
 html, body {
     color: #333; /* 이걸 안해주면 완전 투박한 검정색이 나오기때문에 해준다. */
-    min-width: 1280px;/* 화면의 최소단위, 1280이하의 해상도에서도 1280로 볼수있도록 하는것! ,모바일에서도 1280의 레이아웃으로 볼 수 있도록 설정해주는것! */
+    /*min-width: 1280px;*/ /* 화면의 최소단위, 1280이하의 해상도에서도 1280로 볼수있도록 하는것! ,모바일에서도 1280의 레이아웃으로 볼 수 있도록 설정해주는것! */
 }
 @font-face {
     font-family: 'Recipekorea';
@@ -478,3 +478,56 @@ footer h3 {
     color: rgb(248, 94, 94);
     font-family: 'SuncheonB';
 }
+
+/* 반응형 제작 
+해상도 가로 960px 이하일 때 적용되는 스타일*/
+
+@media screen and (max-width: 1280px) {
+    /* 브라우저 너비 1280px 이하일때 스타일 */
+    header div {width: 100%;}
+    .main_visual .title {width: 100%;}
+    .best_v .cont {width: 100%;}
+    .motion .motion_cont .list_cont {width: 100%;}
+    .g_ver05 .cont {width: 100%;}
+    .g_ver05 .title {width: 100%;}
+    .about .cont {width: 100%;}
+} /* 해상도 1280px이하 적용되는 범위 */
+
+/* 960이하일때 이렇게 스타일을 적용시키겠다! */
+@media screen and (max-width: 960px) {
+    .best_v .cont {flex-wrap: wrap;} /* 세로로 떨어지도록? */
+    .best_v .cont .youtube {width: 100%;}
+    .best_v .cont .info {width: 90%; 
+                         margin: 0 auto;
+                         margin-top: 20px;}
+    .best_v .cont .info p:nth-of-type(2) {
+        margin: 10px 0 20px;
+    }
+    .motion .list {flex-wrap: wrap;}
+    .motion .list li {margin-bottom: 10px;}
+    .motion .motion_cont .list_cont.on {flex-wrap: wrap;}
+    .motion .motion_cont .list_cont .items {
+        width: 95%;
+        margin: 0 auto;
+        margin-bottom: 20px;}
+    .g_ver05 .cont {flex-wrap: wrap;}
+    .g_ver05 .cont .items {
+        width: 95%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .about .cont {flex-wrap: wrap;}
+    .about .cont figure {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    .about .cont .info {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    body {
+        overflow-x: hidden; /* 가로 스크롤바 없애는것 */
+    }
+}/* 해상도 960px 이하 */
