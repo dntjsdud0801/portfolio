@@ -541,9 +541,12 @@ footer h3 {
 
 @media screen and (max-width:640px) {
     .main_visual .title h2 {
-        font-size: 35px;
+        font-size: 25px;
     }
-    .main_visual .title p {font-size: 25px;}
+    .main_visual .title p {
+        font-size: 20px;
+        margin-bottom: 20px;
+        }
     section .title h3 {
         font-size: 30px !important; /* !important:앞전의 우선순위 무시하고 지금꺼 적용한다? */
     }
