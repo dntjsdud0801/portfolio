@@ -421,10 +421,12 @@ header div i {
     padding-left: 20px;
     box-sizing: border-box;
     /* background-color: rgb(9, 161, 111); */
+    padding-bottom: 4px;
 }
 .g_ver05 .cont .items .info p {
     font-size: 14px;
 }
+.g_ver05 .cont .items .info p:nth-child(2) {margin-bottom: 4px;}
 .g_ver05 .cont .items .info h4 {
     font-size: 30px;
     font-family: 'Cafe24Ssurround';
@@ -604,18 +606,21 @@ footer h3 {
     .main_visual .title {padding-left: 15px;
                          box-sizing: border-box;}
     .main_visual .title h2 {
-        font-size: 20px;
+        font-size: 22px;
+        margin-top: 50px;
+        margin-left: 43px;
     }
     .main_visual .title p {
-        font-size: 15px;
+        font-size: 9px !important;
         margin-bottom: 11px;
+        margin-left: 46px;
         }
-        .main_visual .title a {
+    .main_visual .title a {
             width: 95px;
             height: 32px;
             line-height: 32px;
             font-size: 14px;
-            margin-left: 15px;
+            margin-left: 179px;
         }
     section .title h3 {
         font-size: 30px !important; /* !important:앞전의 우선순위 무시하고 지금꺼 적용한다? */
