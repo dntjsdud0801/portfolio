@@ -432,6 +432,74 @@ header div i {
     font-family: 'Cafe24Ssurround';
 }
 
+/* g_ver06 */
+.g_ver06 {
+    background-color: #fdf5f3;
+    padding: 37px 0px 100px;
+}
+.g_ver06 .title {
+    color: #fff;
+    text-align: center;
+    width: 1440px;
+    margin: 0 auto;
+}
+.g_ver06 .title h3 {
+    font-size: 45px;
+    color: #f55b68;
+}
+.g_ver06 .title p {
+    font-size: 20px;
+    color: #f55b68;
+}
+.g_ver06 .title em {
+    color: #333;
+    font-size: 13px;
+    /* 위 여백 : 40px
+    아래 여백 : 10px */
+    /* margin: 40px 0 10px; */
+    /* 외부여백 : 위 좌우 하 */
+    /* background-color: rgb(8, 145, 236); */
+
+    display: block; /* margin을 넣었는데 표가 안난다?? 백그라운드 컬러로 확인해보면 인라인요소인걸
+    확인을 할 수 있다!! 블랙요소로 바꿔주면 margin이 다시 적용됌~! */
+
+    text-align: right; /* 오른쪽에 배치했는데 맨끝에 붙는다...이건 title 영역 범위가 창 전체로 되있어서 그렇다!!
+                          그래서 title의 박스를 width값 넣고 margin으로 범위정하고 중앙으로 위치하게함~! */
+}
+.g_ver06 .cont {
+    display: flex; /* 아이템들을 가로로 나열시켜준다*/
+    width: 1440px;
+    /*background-color: aqua;*/ /* 백그라운드 컬러는 영역 확인을 위해서 쓰고, 나중에 지운다 */
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+.g_ver06 .cont .items {
+    width: 23%; /* 딱 맞게 들어갈거면 25%씩 넣어주고 여백 필요하면 더 낮은수치~ */
+    background-color: #fff;
+    padding: 25px;
+    box-sizing: border-box;
+    border-radius: 30px;
+  }
+.g_ver06 .cont .items figure {
+    width: 100%;
+    height: 250px;
+  }
+.g_ver06 .cont .items figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .g_ver06 .cont .items .info {
+      margin: 30px 0;
+  }
+  .g_ver06 .cont .items .info p{
+      font-size: 14px;
+      margin-bottom: 15px;
+  }
+  .g_ver06 .cont .items .info h4 {
+      font-size: 20px;
+  }
+
 /* .about */
 .about {
     padding: 100px 0;
