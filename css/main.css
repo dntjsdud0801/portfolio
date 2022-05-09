@@ -483,11 +483,13 @@ header div i {
 .g_ver06 .cont .items figure {
     width: 100%;
     height: 250px;
+    overflow: hidden;
   }
 .g_ver06 .cont .items figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.8s;
   }
   .g_ver06 .cont .items .info {
       margin: 30px 0;
@@ -499,7 +501,9 @@ header div i {
   .g_ver06 .cont .items .info h4 {
       font-size: 20px;
   }
-
+  .g_ver06 .cont .items:hover figure img {
+    transform: scale(1.5);  /* 뜻: items에 올렸을때 피규어 안에 있는 이미지한테!! ()이미지의 몇배를 늘려지게 할거냐? 넣는곳 */
+}
 /* .about */
 .about {
     padding: 100px 0;
