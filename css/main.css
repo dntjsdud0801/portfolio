@@ -447,6 +447,7 @@ header div i {
     text-align: center;
     width: 1440px;
     margin: 0 auto;
+    text-align: right;
 }
 .g_ver06 .title h3 {
     font-size: 45px;
@@ -464,7 +465,7 @@ header div i {
     /* margin: 40px 0 10px; */
     /* 외부여백 : 위 좌우 하 */
     /* background-color: rgb(8, 145, 236); */
-
+    
     display: block; /* margin을 넣었는데 표가 안난다?? 백그라운드 컬러로 확인해보면 인라인요소인걸
     확인을 할 수 있다!! 블랙요소로 바꿔주면 margin이 다시 적용됌~! */
 
@@ -620,6 +621,7 @@ footer h3 {
     .g_ver05 .cont {width: 100%;}
     .g_ver05 .title {width: 100%;}
     .g_ver06 .cont {width: 100%;}
+    .g_ver06 .title {width: 100%;}
     .about .cont {width: 100%;}
 } /* 해상도 1280px이하 적용되는 범위 */
 
@@ -746,6 +748,7 @@ footer h3 {
         padding-bottom: 8px;
     }
     .g_ver05 .title em {font-size: 9px;}
+    .g_ver06 .title em {font-size: 9px;}
     .about .cont .info {width: 90%;}
     .about .cont .info div h4 {margin-bottom: 10px;}
     .about .cont .info div p { font-size: 16px; }
