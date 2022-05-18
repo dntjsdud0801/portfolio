@@ -431,6 +431,9 @@ header div i {
 .g_ver05 .cont .items .info p {
     font-size: 14px;
 }
+.g_ver05 .cont .items:nth-child(1) .info p {
+    margin-bottom: 4px;
+}
 .g_ver05 .cont .items .info p:nth-child(2) {margin-bottom: 4px;}
 .g_ver05 .cont .items .info h4 {
     font-size: 30px;
