@@ -622,6 +622,7 @@ footer h3 {
     .g_ver05 .title {width: 100%;}
     .g_ver06 .cont {width: 100%;}
     .g_ver06 .title {width: 100%;}
+    .g_ver06 .title em {width: 100%;}
     .about .cont {width: 100%;}
 } /* 해상도 1280px이하 적용되는 범위 */
 
