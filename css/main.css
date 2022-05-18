@@ -428,6 +428,9 @@ header div i {
     /* background-color: rgb(9, 161, 111); */
     padding-bottom: 4px;
 }
+.g_ver05 .cont .items:nth-child(1) .info {
+    margin-top: 38px;
+}
 .g_ver05 .cont .items .info p {
     font-size: 14px;
 }
